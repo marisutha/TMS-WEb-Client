@@ -8,7 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 export default function TopBar() {
     const [anchorEl, setAnchorEl] = useState(null);
 
-    const handleClick = (event) => {
+    const handleClick = (event:any) => {
         setAnchorEl(event.currentTarget);
     };
 
