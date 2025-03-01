@@ -49,7 +49,7 @@ export default function Home(props: any) {
       },
       IsDeleted: false
     }
-    let searchTaskList = await taskApiFunction?.readTasks(data?.length > 0 ? filter : { IsDeleted: false });
+    let searchTaskList :any = await taskApiFunction?.readTasks(data?.length > 0 ? filter : { IsDeleted: false });
     if (searchTaskList?.status === 200) {
       setIsTaskListLoading(false);
       setTaskListData(searchTaskList?.output);
@@ -349,12 +349,12 @@ export default function Home(props: any) {
 
 export const getServerSideProps = async (context: any) => {
 
-  let readStatus = await taskApiFunction?.readStatusSSR({});
-  let readPriority = await taskApiFunction?.readPrioritySSR({});
-  let readSeverity = await taskApiFunction?.readSeveritySSR({});
-  let readActivity = await taskApiFunction?.readActivitySSR({});
-  let readAssignee = await taskApiFunction?.readAssigneeSSR({});
-  let readTask = await taskApiFunction?.readTaskSSR({ IsDeleted: false });
+  let readStatus:any = await taskApiFunction?.readStatusSSR({});
+  let readPriority:any = await taskApiFunction?.readPrioritySSR({});
+  let readSeverity:any = await taskApiFunction?.readSeveritySSR({});
+  let readActivity:any = await taskApiFunction?.readActivitySSR({});
+  let readAssignee:any = await taskApiFunction?.readAssigneeSSR({});
+  let readTask:any = await taskApiFunction?.readTaskSSR({ IsDeleted: false });
   return {
     props: {
       statusData: readStatus?.status === 200 ? readStatus?.output : [],

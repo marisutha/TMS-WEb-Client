@@ -21,7 +21,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
     return <MuiAlert elevation={5} ref={ref} variant="filled" {...props} />;
 });
 
-export default function TaskForm({ configs, data, callbacks }: TaskFormInterface) {
+export default function TaskForm({ configs, data, callbacks }: any) {
 
     const initialFormState = {
         Title: data?.taskData.Title || null,
@@ -144,7 +144,7 @@ export default function TaskForm({ configs, data, callbacks }: TaskFormInterface
                     <Grid xs={12} sm={12} md={12} lg={12} xl={12} sx={{ pt: 0, pl: 2, pr: 1 }}>
                         <InputLabel id="demo-simple-select-standard-label">Activity</InputLabel>
                         <Select
-                            onChange={(e) => handleInputChange({ target: { name: 'ActivityID', value: e.target.value } })}
+                            onChange={(e:any) => handleInputChange({ target: { name: 'ActivityID', value: e.target.value } })}
                             name='ActivityID'
                             fullWidth
                             value={formData?.ActivityID}
@@ -167,7 +167,7 @@ export default function TaskForm({ configs, data, callbacks }: TaskFormInterface
                             <DatePicker
                                 label="Start Date"
                                 value={formData.StartDate ? dayjs(moment(formData?.StartDate).format("YYYY-MM-DD")) : null}
-                                onChange={(date) => handleInputChange({ target: { name: 'StartDate', value: date } })}
+                                onChange={(date:any) => handleInputChange({ target: { name: 'StartDate', value: date } })}
                             />
                         </LocalizationProvider>
                     </Grid>
@@ -176,7 +176,7 @@ export default function TaskForm({ configs, data, callbacks }: TaskFormInterface
                             <DatePicker
                                 label="End Date"
                                 value={formData.EndDate ? dayjs(moment(formData?.EndDate).format("YYYY-MM-DD")) : null}
-                                onChange={(date) => handleInputChange({ target: { name: 'EndDate', value: date } })}
+                                onChange={(date:any) => handleInputChange({ target: { name: 'EndDate', value: date } })}
                             />
                         </LocalizationProvider>
                     </Grid>
@@ -211,7 +211,7 @@ export default function TaskForm({ configs, data, callbacks }: TaskFormInterface
                     <Grid xs={12} sm={12} md={12} lg={4} xl={4} sx={{ pt: 2, pl: 2, pr: 1 }}>
                         <InputLabel id="demo-simple-select-standard-label">Status</InputLabel>
                         <Select
-                            onChange={(e) => handleInputChange({ target: { name: 'StatusID', value: e.target.value } })}
+                            onChange={(e:any) => handleInputChange({ target: { name: 'StatusID', value: e.target.value } })}
                             name='StatusID'
                             required={true}
                             fullWidth
@@ -231,7 +231,7 @@ export default function TaskForm({ configs, data, callbacks }: TaskFormInterface
                     <Grid xs={12} sm={12} md={12} lg={4} xl={4} sx={{ pt: 2, pl: 2, pr: 1 }}>
                         <InputLabel id="demo-simple-select-standard-label">Priority</InputLabel>
                         <Select
-                            onChange={(e) => handleInputChange({ target: { name: 'PriorityID', value: e.target.value } })}
+                            onChange={(e:any) => handleInputChange({ target: { name: 'PriorityID', value: e.target.value } })}
                             name='PriorityID'
                             required={true}
                             fullWidth
@@ -251,7 +251,7 @@ export default function TaskForm({ configs, data, callbacks }: TaskFormInterface
                     <Grid xs={12} sm={12} md={12} lg={4} xl={4} sx={{ pr: 1, pl: 2, pt: 2 }}>
                         <InputLabel id="demo-simple-select-standard-label">Severity</InputLabel>
                         <Select
-                            onChange={(e) => handleInputChange({ target: { name: 'SeverityID', value: e.target.value } })}
+                            onChange={(e:any) => handleInputChange({ target: { name: 'SeverityID', value: e.target.value } })}
                             name='SeverityID'
                             required={true}
                             fullWidth
@@ -286,7 +286,7 @@ export default function TaskForm({ configs, data, callbacks }: TaskFormInterface
                     <Grid xs={12} sm={12} md={12} lg={6} xl={6} sx={{ pr: 1, pt: { xs: 2, sm: 2, md: 2 ,lg:0,xl:0}, pl: 2 }}>
                         <InputLabel id="demo-simple-select-standard-label">Assignee</InputLabel>
                         <Select
-                            onChange={(e) => handleInputChange({ target: { name: 'AssignedUserID', value: e.target.value } })}
+                            onChange={(e:any) => handleInputChange({ target: { name: 'AssignedUserID', value: e.target.value } })}
                             name='AssignedUserID'
                             required={true}
                             fullWidth
